@@ -1,3 +1,28 @@
+## urdf (rolling) - 2.13.2-1
+
+The packages in the `urdf` repository were released into the `rolling` distro by running `/usr/local/google/home/sloretz/projects/lyrical/env3/bin/bloom-release urdf --rosdistro rolling --track rolling` on `Tue, 14 Apr 2026 03:58:44 -0000`
+
+These packages were released:
+- `urdf`
+- `urdf_parser_plugin`
+
+Version of package(s) in repository `urdf`:
+
+- upstream repository: https://github.com/ros2/urdf.git
+- release repository: https://github.com/ros2-gbp/urdf-release.git
+- rosdistro version: `2.13.1-1`
+- old version: `2.13.1-1`
+- new version: `2.13.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.13.0`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.26.0`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## urdf (kilted) - 2.12.3-1
 
 The packages in the `urdf` repository were released into the `kilted` distro by running `/usr/bin/bloom-release --rosdistro kilted --track kilted urdf` on `Mon, 19 Jan 2026 16:21:26 -0000`
