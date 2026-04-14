@@ -2,10 +2,21 @@
 Changelog for package urdf
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2.12.3 (2026-01-19)
+2.13.2 (2026-04-14)
 -------------------
-* Fix CMAKE deprecation (`#48 <https://github.com/ros2/urdf/issues/48>`_) (`#53 <https://github.com/ros2/urdf/issues/53>`_)
-* Contributors: mergify[bot]
+
+* Remove ``urdf_world/types.h`` deprecation (`#54 <https://github.com/ros2/urdf/issues/54>`_)
+
+* Contributors: Alejandro Hernández Cordero
+
+2.13.1 (2026-01-19)
+-------------------
+* Fix CMAKE deprecation (`#48 <https://github.com/ros2/urdf/issues/48>`_)
+* Removed tinyxml2_vendor dependency (`#47 <https://github.com/ros2/urdf/issues/47>`_)
+* Contributors: Alejandro Hernández Cordero, mosfet80
+
+2.13.0 (2025-04-25)
+-------------------
 
 2.12.2 (2024-12-20)
 -------------------
