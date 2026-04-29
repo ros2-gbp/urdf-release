@@ -1,0 +1,12 @@
+Source: ros-lyrical-urdf-parser-plugin
+Section: misc
+Priority: optional
+Maintainer: Alejandro Hernandez Cordero <alejandro@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-lyrical-ament-cmake-ros, ros-lyrical-ament-lint-auto <!nocheck>, ros-lyrical-ament-lint-common <!nocheck>, ros-lyrical-urdfdom-headers, ros-lyrical-ros-workspace
+Homepage: https://index.ros.org/p/urdf_parser_plugin/#lyrical
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-urdf-parser-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lyrical-urdfdom-headers, ros-lyrical-ros-workspace
+Description: This package contains a C++ base class for URDF parsers.
