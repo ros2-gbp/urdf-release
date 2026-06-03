@@ -2,37 +2,7 @@
 Changelog for package urdf_parser_plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2.14.0 (2026-05-05)
--------------------
-
-2.13.2 (2026-04-14)
--------------------
-
-* Remove ``urdf_world/types.h`` deprecation (`#54 <https://github.com/ros2/urdf/issues/54>`_)
-
-* Contributors: Alejandro Hernández Cordero
-
-2.13.1 (2026-01-19)
--------------------
-* Fix CMAKE deprecation (`#48 <https://github.com/ros2/urdf/issues/48>`_)
-  cmake version < then 3.10 is deprecated
-* Contributors: mosfet80
-
-2.13.0 (2025-04-25)
--------------------
-
-2.12.2 (2024-12-20)
--------------------
-
-2.12.1 (2024-12-13)
--------------------
-
-2.12.0 (2024-08-28)
--------------------
-* Added commom linters (`#39 <https://github.com/ros2/urdf/issues/39>`_)
-* Contributors: Alejandro Hernández Cordero
-
-2.11.0 (2024-04-29)
+2.10.1 (2026-06-03)
 -------------------
 
 2.10.0 (2023-12-26)
