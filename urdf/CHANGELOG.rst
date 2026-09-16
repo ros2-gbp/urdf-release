@@ -2,7 +2,50 @@
 Changelog for package urdf
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2.10.1 (2026-06-03)
+2.14.1 (2026-09-16)
+-------------------
+* Include what you use (`#58 <https://github.com/ros2/urdf/issues/58>`_)
+* Fix the mock plugin install for the plugin_overhead benchmark. (`#57 <https://github.com/ros2/urdf/issues/57>`_)
+* use C++ 20 in default. (`#55 <https://github.com/ros2/urdf/issues/55>`_)
+* Contributors: Alejandro Hernández Cordero, Chris Lalancette, Tomoya Fujita
+
+2.14.0 (2026-05-05)
+-------------------
+
+2.13.2 (2026-04-14)
+-------------------
+
+* Remove ``urdf_world/types.h`` deprecation (`#54 <https://github.com/ros2/urdf/issues/54>`_)
+
+* Contributors: Alejandro Hernández Cordero
+
+2.13.1 (2026-01-19)
+-------------------
+* Fix CMAKE deprecation (`#48 <https://github.com/ros2/urdf/issues/48>`_)
+* Removed tinyxml2_vendor dependency (`#47 <https://github.com/ros2/urdf/issues/47>`_)
+* Contributors: Alejandro Hernández Cordero, mosfet80
+
+2.13.0 (2025-04-25)
+-------------------
+
+2.12.2 (2024-12-20)
+-------------------
+* make linters happy (`#45 <https://github.com/ros2/urdf/issues/45>`_)
+* Contributors: Alejandro Hernández Cordero
+
+2.12.1 (2024-12-13)
+-------------------
+* Added documentation with rosdoc2 (`#40 <https://github.com/ros2/urdf/issues/40>`_)
+* Contributors: Alejandro Hernández Cordero
+
+2.12.0 (2024-08-28)
+-------------------
+* Added commom linters (`#39 <https://github.com/ros2/urdf/issues/39>`_)
+* Use rcutils to log (`#37 <https://github.com/ros2/urdf/issues/37>`_)
+* Enable test_robot_model_parser test (`#38 <https://github.com/ros2/urdf/issues/38>`_)
+* Contributors: Alejandro Hernández Cordero
+
+2.11.0 (2024-04-29)
 -------------------
 
 2.10.0 (2023-12-26)

@@ -1,5 +1,4 @@
-// Copyright (c) 2020, Open Source Robotics Foundation, Inc.
-// All rights reserved.
+// Copyright (c) 2013, Willow Garage, Inc.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -11,7 +10,7 @@
 //      notice, this list of conditions and the following disclaimer in the
 //      documentation and/or other materials provided with the distribution.
 //
-//    * Neither the name of the copyright holder nor the names of its
+//    * Neither the name of the Willow Garage nor the names of its
 //      contributors may be used to endorse or promote products derived from
 //      this software without specific prior written permission.
 //
@@ -27,52 +26,46 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-#include <tinyxml2.h>
-#include <urdf_parser/urdf_parser.h>
+/* Author: Ioan Sucan */
+
+#ifndef URDF_PARSER_PLUGIN__PARSER_HPP_
+#define URDF_PARSER_PLUGIN__PARSER_HPP_
 
 #include <cstddef>
 #include <string>
 
-#include <urdf_parser_plugin/parser.hpp>
+#include "urdf_model/types.h"
 
 namespace urdf
 {
-class URDFXMLParser final : public urdf::URDFParser
+
+/** \brief Base class for URDF parsers */
+class URDFParser
 {
 public:
-  URDFXMLParser() = default;
-
-  ~URDFXMLParser() = default;
-
-  urdf::ModelInterfaceSharedPtr parse(const std::string & xml_string) override;
-
-  size_t might_handle(const std::string & data) override;
-};
-
-urdf::ModelInterfaceSharedPtr URDFXMLParser::parse(const std::string & xml_string)
-{
-  return urdf::parseURDF(xml_string);
-}
-
-size_t URDFXMLParser::might_handle(const std::string & data)
-{
-  tinyxml2::XMLDocument doc;
-  const tinyxml2::XMLError error = doc.Parse(data.c_str());
-  if (error == tinyxml2::XML_SUCCESS) {
-    // Since it's an XML document it must have `<robot>` as the first tag
-    const tinyxml2::XMLElement * root = doc.RootElement();
-    if (std::string("robot") != root->Name()) {
-      return data.size();
-    }
+  URDFParser()
+  {
+  }
+  virtual ~URDFParser()
+  {
   }
 
-  // Possiblities:
-  //  1) It is not an XML based robot description
-  //  2) It is an XML based robot description, but there's an XML syntax error
-  //  3) It is a URDF XML with correct XML syntax
-  return data.find("<robot");
-}
+  /// \brief Load Model from string
+  /// \return nullptr and write to stderr if the given string is invalid
+  virtual urdf::ModelInterfaceSharedPtr parse(const std::string & data) = 0;
+
+  /// \brief Indicate if data is meant to be parsed by this parser
+  /// \return The position in the string that the plugin became confident the
+  ///         data is intended to be parsed by it.
+  ///         For example, the plugin parsing COLLADA files might return the
+  ///         position in the string that the '<COLLADA>' xml tag was found.
+  ///         Smaller values are interpretted as more confidence, and the
+  ///         plugin with the smallest value is used to parse the data.
+  ///         If a plugin believes data is not meant for it, then it should
+  ///         return a value greater than or equal to data.size().
+  virtual size_t might_handle(const std::string & data) = 0;
+};
+
 }  // namespace urdf
 
-#include <pluginlib/class_list_macros.hpp>  // NOLINT
-PLUGINLIB_EXPORT_CLASS(urdf::URDFXMLParser, urdf::URDFParser)
+#endif  // URDF_PARSER_PLUGIN__PARSER_HPP_
